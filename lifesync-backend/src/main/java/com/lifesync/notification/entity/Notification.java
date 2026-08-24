@@ -32,7 +32,7 @@ public class Notification {
     @Column(nullable = false)
     private Long sourceId; // id of the task/goal/habit/document/budget this refers to
 
-    @Column(nullable = false)
+    @Column(name = "is_read", nullable = false)
     private boolean read = false;
 
     @Column(nullable = false, updatable = false)
