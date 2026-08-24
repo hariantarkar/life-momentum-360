@@ -1,5 +1,6 @@
 package com.lifesync.auth.service;
 
+import com.lifesync.audit.service.AuditService;
 import com.lifesync.auth.dto.*;
 import com.lifesync.common.exception.BadRequestException;
 import com.lifesync.common.exception.UnauthorizedException;
@@ -38,6 +39,9 @@ public class AuthServiceImpl implements AuthService {
     @Autowired
     private JwtService jwtService;
 
+    @Autowired
+    private AuditService auditService;
+
     @Override
     @Transactional
     public UserSummary register(RegisterRequest request) {
@@ -54,18 +58,30 @@ public class AuthServiceImpl implements AuthService {
         user.setActive(true);
 
         User saved = userRepository.save(user);
+
+        auditService.log(saved.getId(), "REGISTER", "New account registered: " + saved.getEmail());
+
         return UserSummary.from(saved);
     }
 
     @Override
     @Transactional
     public AuthResponse login(LoginRequest request, String deviceInfo) {
-        authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(request.getEmail().toLowerCase(), request.getPassword())
-        );
+
+        try {
+            authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(request.getEmail().toLowerCase(), request.getPassword())
+            );
+        } catch (Exception ex) {
+            auditService.logFailedAttempt(request.getEmail().toLowerCase(), "LOGIN_FAILED",
+                    "Invalid credentials attempt");
+            throw ex;
+        }
 
         User user = userRepository.findByEmail(request.getEmail().toLowerCase())
                 .orElseThrow(() -> new UnauthorizedException("Invalid email or password"));
+
+        auditService.log(user.getId(), "LOGIN_SUCCESS", "Logged in" + (deviceInfo != null ? " from: " + deviceInfo : ""));
 
         return buildAuthResponse(user, deviceInfo);
     }
@@ -85,6 +101,9 @@ public class AuthServiceImpl implements AuthService {
         refreshTokenRepository.save(storedToken);
 
         User user = storedToken.getUser();
+
+        auditService.log(user.getId(), "TOKEN_REFRESH", "Access token refreshed");
+
         return buildAuthResponse(user, storedToken.getDeviceInfo());
     }
 
@@ -92,6 +111,7 @@ public class AuthServiceImpl implements AuthService {
     @Transactional
     public void logout(String refreshTokenValue) {
         refreshTokenRepository.findByToken(refreshTokenValue).ifPresent(token -> {
+            auditService.log(token.getUser().getId(), "LOGOUT", "User logged out");
             token.setRevoked(true);
             refreshTokenRepository.save(token);
         });
