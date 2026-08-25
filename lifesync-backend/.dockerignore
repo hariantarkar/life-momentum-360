@@ -1,0 +1,12 @@
+target/
+.git/
+.gitignore
+.idea/
+*.iml
+.settings/
+.classpath
+.project
+.metadata/
+README.md
+DEPLOYMENT.md
+*.md

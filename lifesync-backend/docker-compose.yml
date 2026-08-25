@@ -1,0 +1,39 @@
+# For LOCAL testing of the containerized app + a real MySQL container together.
+# Run with: docker compose up --build
+# This is NOT a production deployment config — it's a convenient way to prove
+# the Dockerfile works end-to-end before deploying to a real cloud platform.
+
+services:
+  mysql:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: lifesync_db
+      MYSQL_ROOT_PASSWORD: rootpassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - lifesync-mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-prootpassword"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/lifesync_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+      DB_USERNAME: root
+      DB_PASSWORD: rootpassword
+      JWT_SECRET: change-this-to-a-real-256-bit-secret-before-any-real-deployment
+      JPA_DDL_AUTO: update
+
+volumes:
+  lifesync-mysql-data:
