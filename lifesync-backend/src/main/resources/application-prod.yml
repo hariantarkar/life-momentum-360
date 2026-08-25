@@ -1,0 +1,44 @@
+# Production profile — activate with SPRING_PROFILES_ACTIVE=prod
+# Every value below MUST be supplied via environment variables in the real
+# deployment environment (Render/Railway/AWS/Docker secrets, etc.) — there
+# are deliberately NO safe defaults here, unlike application.yml, so the app
+# fails fast at startup if you forget to configure something critical rather
+# than silently running with a dev secret in production.
+
+server:
+  port: ${SERVER_PORT}
+  error:
+    include-message: never
+    include-stacktrace: never
+    include-binding-errors: never
+
+spring:
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: validate   # NEVER auto-alter schema in production — use migrations instead
+    show-sql: false
+    open-in-view: false    # avoids lazy-loading queries firing during view rendering
+
+springdoc:
+  swagger-ui:
+    enabled: false   # don't expose interactive API docs publicly in production
+  api-docs:
+    enabled: false
+
+lifesync:
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS}   # no default — must be set to your real frontend domain(s)
+  jwt:
+    secret: ${JWT_SECRET}
+    access-token-expiration-ms: ${JWT_ACCESS_EXPIRATION_MS:900000}
+    refresh-token-expiration-ms: ${JWT_REFRESH_EXPIRATION_MS:604800000}
+
+logging:
+  level:
+    com.lifesync: INFO
+    org.hibernate.SQL: WARN

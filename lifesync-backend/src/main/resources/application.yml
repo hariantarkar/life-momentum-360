@@ -1,24 +1,23 @@
 server:
-  port: 8080
+  port: ${SERVER_PORT:8080}
 
 spring:
   application:
     name: lifesync-backend
 
   datasource:
-    url: jdbc:mysql://localhost:3307/lifesync_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
-    username: root
-    password: root       # <-- change to your MySQL password
+    url: ${DB_URL:jdbc:mysql://localhost:3307/lifesync_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:root}
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
     hibernate:
-      ddl-auto: update      # fine for dev; switch to 'validate' + migrations later
-    show-sql: true
+      ddl-auto: ${JPA_DDL_AUTO:update}      # fine for dev; set to 'validate' in prod (see application-prod.yml)
+    show-sql: ${JPA_SHOW_SQL:true}
     properties:
       hibernate:
         format_sql: true
-        dialect: org.hibernate.dialect.MySQLDialect
 
 springdoc:
   swagger-ui:
@@ -28,11 +27,13 @@ springdoc:
 
 # Custom JWT settings
 lifesync:
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:3000}
   jwt:
-    secret: "Hari-life-momentum-360Hari-life-momentum-360Hari-life-momentum-360Hari-life-momentum-360"
-    access-token-expiration-ms: 900000        # 15 minutes
-    refresh-token-expiration-ms: 604800000    # 7 days
+    secret: ${JWT_SECRET:ihm3JdAbVhfPuoL8BAvoOhI7J7IR4lOw_BgblKUEZ5OzAUSGd7466COkUR4N4yx-}
+    access-token-expiration-ms: ${JWT_ACCESS_EXPIRATION_MS:900000}
+    refresh-token-expiration-ms: ${JWT_REFRESH_EXPIRATION_MS:604800000}
 
 logging:
   level:
-    com.lifesync: DEBUG
+    com.lifesync: ${LOG_LEVEL:DEBUG}
