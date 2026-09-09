@@ -1,0 +1,16 @@
+.lifesync-navbar {
+  background-color: #4f46e5;
+  padding: 0.75rem 0;
+}
+
+.lifesync-brand {
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: -0.02em;
+}
+
+.lifesync-navbar-username {
+  color: #e0e7ff;
+  font-size: 0.95rem;
+}

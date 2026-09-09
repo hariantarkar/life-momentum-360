@@ -1,0 +1,21 @@
+.lifesync-dashboard {
+  padding: 2.5rem 1rem;
+}
+
+.lifesync-dashboard-title {
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.25rem;
+}
+
+.lifesync-dashboard-subtitle {
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+.lifesync-dashboard-placeholder {
+  background-color: #eef2ff;
+  border: 1px solid #c7d2fe;
+  border-radius: 12px;
+  padding: 2rem;
+}
