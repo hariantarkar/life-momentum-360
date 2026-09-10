@@ -1,0 +1,26 @@
+.lifesync-lifearea-form {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.lifesync-color-swatches {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.lifesync-color-swatch {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.lifesync-color-swatch-selected {
+  border-color: #111827;
+  transform: scale(1.1);
+}

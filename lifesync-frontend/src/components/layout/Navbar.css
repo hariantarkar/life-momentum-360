@@ -14,3 +14,20 @@
   color: #e0e7ff;
   font-size: 0.95rem;
 }
+
+.lifesync-navbar-links {
+  display: flex;
+  gap: 1.25rem;
+  margin-left: 2rem;
+}
+
+.lifesync-nav-link {
+  color: #e0e7ff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.lifesync-nav-link:hover {
+  color: #ffffff;
+}

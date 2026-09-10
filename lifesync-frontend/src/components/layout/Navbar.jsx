@@ -18,6 +18,20 @@ function Navbar() {
           LifeSync
         </Link>
 
+        {isAuthenticated && (
+          <div className="lifesync-navbar-links">
+            <Link to="/dashboard" className="lifesync-nav-link">
+              Dashboard
+            </Link>
+            <Link to="/life-areas" className="lifesync-nav-link">
+              Life Areas
+            </Link>
+            <Link to="/goals" className="lifesync-nav-link">
+              Goals
+            </Link>
+          </div>
+        )}
+
         <div className="d-flex align-items-center ms-auto">
           {isAuthenticated ? (
             <>
