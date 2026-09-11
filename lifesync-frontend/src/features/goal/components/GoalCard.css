@@ -1,0 +1,47 @@
+.lifesync-goal-card {
+  display: block;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.15s ease;
+}
+
+.lifesync-goal-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  color: inherit;
+}
+
+.lifesync-goal-card-title {
+  font-weight: 600;
+  margin-bottom: 0;
+  color: #111827;
+}
+
+.lifesync-goal-card-area {
+  color: #6b7280;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.lifesync-goal-progress-wrapper {
+  margin-bottom: 0.5rem;
+}
+
+.lifesync-goal-progress {
+  height: 8px;
+  margin-bottom: 0.35rem;
+}
+
+.lifesync-goal-progress-label {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.lifesync-goal-card-footer {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}

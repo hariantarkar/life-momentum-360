@@ -1,0 +1,9 @@
+.lifesync-milestone-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.lifesync-milestone-date-input {
+  max-width: 160px;
+}

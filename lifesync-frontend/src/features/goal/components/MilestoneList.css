@@ -1,0 +1,33 @@
+.lifesync-milestone-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lifesync-milestone-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.lifesync-milestone-item .form-check {
+  flex: 1;
+}
+
+.lifesync-milestone-completed {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.lifesync-milestone-date {
+  color: #9ca3af;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.lifesync-milestone-delete {
+  flex-shrink: 0;
+  text-decoration: none;
+}

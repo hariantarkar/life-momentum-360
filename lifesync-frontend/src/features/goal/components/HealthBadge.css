@@ -1,0 +1,29 @@
+.lifesync-health-badge {
+  display: inline-block;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.lifesync-badge-on-track {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.lifesync-badge-at-risk {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.lifesync-badge-overdue {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.lifesync-badge-completed {
+  background-color: #e0e7ff;
+  color: #3730a3;
+}

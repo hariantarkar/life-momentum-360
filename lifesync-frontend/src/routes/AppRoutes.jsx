@@ -2,6 +2,9 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import LoginPage from '../features/auth/pages/LoginPage';
 import RegisterPage from '../features/auth/pages/RegisterPage';
 import DashboardPage from '../features/dashboard/pages/DashboardPage';
+import LifeAreasPage from '../features/lifearea/pages/LifeAreasPage';
+import GoalsPage from '../features/goal/pages/GoalsPage';
+import GoalDetailPage from '../features/goal/pages/GoalDetailPage';
 import ProtectedRoute from './ProtectedRoute';
 
 function AppRoutes() {
@@ -19,8 +22,33 @@ function AppRoutes() {
         }
       />
 
-      {/* Default route: send everyone to the dashboard, which will redirect
-          to /login itself if they're not authenticated */}
+      <Route
+        path="/life-areas"
+        element={
+          <ProtectedRoute>
+            <LifeAreasPage />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/goals"
+        element={
+          <ProtectedRoute>
+            <GoalsPage />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/goals/:id"
+        element={
+          <ProtectedRoute>
+            <GoalDetailPage />
+          </ProtectedRoute>
+        }
+      />
+
       <Route path="/" element={<Navigate to="/dashboard" replace />} />
       <Route path="*" element={<Navigate to="/dashboard" replace />} />
     </Routes>

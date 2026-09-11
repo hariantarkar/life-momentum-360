@@ -1,0 +1,49 @@
+.lifesync-goal-detail {
+  padding: 2rem 1rem 3rem;
+  max-width: 720px;
+}
+
+.lifesync-back-link {
+  color: #6b7280;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.lifesync-back-link:hover {
+  color: #4f46e5;
+}
+
+.lifesync-goal-detail-title {
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0;
+}
+
+.lifesync-goal-detail-area {
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.lifesync-goal-detail-description {
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+.lifesync-goal-detail-meta {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.lifesync-goal-detail-progress {
+  height: 10px;
+}
+
+.lifesync-section-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #111827;
+}
