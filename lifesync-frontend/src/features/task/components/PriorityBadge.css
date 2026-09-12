@@ -1,0 +1,29 @@
+.lifesync-priority-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.lifesync-priority-low {
+  background-color: #f3f4f6;
+  color: #4b5563;
+}
+
+.lifesync-priority-medium {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.lifesync-priority-high {
+  background-color: #fed7aa;
+  color: #9a3412;
+}
+
+.lifesync-priority-urgent {
+  background-color: #fecaca;
+  color: #991b1b;
+}

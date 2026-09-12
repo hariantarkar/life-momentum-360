@@ -1,0 +1,47 @@
+.lifesync-task-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 0.6rem;
+}
+
+.lifesync-task-overdue {
+  border-left: 4px solid #dc2626;
+}
+
+.lifesync-task-checkbox {
+  padding-top: 0.2rem;
+}
+
+.lifesync-task-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.lifesync-task-title {
+  font-weight: 600;
+  color: #111827;
+}
+
+.lifesync-task-title-done {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.lifesync-task-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+.lifesync-task-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}

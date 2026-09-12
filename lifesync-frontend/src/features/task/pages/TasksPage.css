@@ -1,0 +1,16 @@
+.lifesync-tasks-page {
+  padding: 2.5rem 1rem;
+}
+
+.lifesync-page-title {
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0;
+}
+
+.lifesync-task-filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}

@@ -29,6 +29,9 @@ function Navbar() {
             <Link to="/goals" className="lifesync-nav-link">
               Goals
             </Link>
+              <Link to="/tasks" className="lifesync-nav-link">
+              Tasks
+            </Link>
           </div>
         )}
 
