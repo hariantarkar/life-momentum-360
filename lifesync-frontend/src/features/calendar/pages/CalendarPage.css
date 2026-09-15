@@ -1,0 +1,22 @@
+.lifesync-calendar-page {
+  padding: 2.5rem 1rem;
+}
+
+.lifesync-page-title {
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0;
+}
+
+.lifesync-calendar-day-group {
+  margin-bottom: 1.75rem;
+}
+
+.lifesync-calendar-day-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #4f46e5;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 2px solid #e0e7ff;
+}

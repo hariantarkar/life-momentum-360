@@ -1,0 +1,22 @@
+.lifesync-eventtype-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.lifesync-eventtype-event {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.lifesync-eventtype-focus {
+  background-color: #ede9fe;
+  color: #5b21b6;
+}
+
+.lifesync-eventtype-deadline {
+  background-color: #fee2e2;
+  color: #991b1b;
+}

@@ -7,6 +7,7 @@ import GoalsPage from '../features/goal/pages/GoalsPage';
 import GoalDetailPage from '../features/goal/pages/GoalDetailPage';
 import TasksPage from '../features/task/pages/TasksPage';
 import HabitsPage from '../features/habit/pages/HabitsPage';
+import CalendarPage from '../features/calendar/pages/CalendarPage';
 import ProtectedRoute from './ProtectedRoute';
 
 function AppRoutes() {
@@ -66,7 +67,14 @@ function AppRoutes() {
           </ProtectedRoute>
         }
       />
-
+<Route
+        path="/calendar"
+        element={
+          <ProtectedRoute>
+            <CalendarPage />
+          </ProtectedRoute>
+        }
+      />
       <Route path="/" element={<Navigate to="/dashboard" replace />} />
       <Route path="*" element={<Navigate to="/dashboard" replace />} />
     </Routes>
