@@ -32,6 +32,9 @@ function Navbar() {
               <Link to="/tasks" className="lifesync-nav-link">
               Tasks
             </Link>
+             <Link to="/habits" className="lifesync-nav-link">
+              Habits
+            </Link>
           </div>
         )}
 

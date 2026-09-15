@@ -1,0 +1,77 @@
+.lifesync-habit-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.lifesync-habit-card-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.lifesync-habit-card-title {
+  font-weight: 600;
+  margin-bottom: 0;
+  color: #111827;
+}
+
+.lifesync-habit-card-goal {
+  color: #6b7280;
+  font-size: 0.85rem;
+  margin: 0.25rem 0 0.75rem;
+}
+
+.lifesync-habit-stats {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.lifesync-habit-streak {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+}
+
+.lifesync-habit-streak-flame {
+  font-size: 1.1rem;
+}
+
+.lifesync-habit-streak-count {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.lifesync-habit-streak-label {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.lifesync-habit-adherence {
+  min-width: 160px;
+}
+
+.lifesync-habit-adherence-bar {
+  height: 6px;
+  margin-bottom: 0.25rem;
+}
+
+.lifesync-habit-adherence-label {
+  font-size: 0.78rem;
+  color: #6b7280;
+}
+
+.lifesync-habit-card-actions {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}

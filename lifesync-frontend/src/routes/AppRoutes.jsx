@@ -6,6 +6,7 @@ import LifeAreasPage from '../features/lifearea/pages/LifeAreasPage';
 import GoalsPage from '../features/goal/pages/GoalsPage';
 import GoalDetailPage from '../features/goal/pages/GoalDetailPage';
 import TasksPage from '../features/task/pages/TasksPage';
+import HabitsPage from '../features/habit/pages/HabitsPage';
 import ProtectedRoute from './ProtectedRoute';
 
 function AppRoutes() {
@@ -54,6 +55,14 @@ function AppRoutes() {
         element={
           <ProtectedRoute>
             <TasksPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/habits"
+        element={
+          <ProtectedRoute>
+            <HabitsPage />
           </ProtectedRoute>
         }
       />
